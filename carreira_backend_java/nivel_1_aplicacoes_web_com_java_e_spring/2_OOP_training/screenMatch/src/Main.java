@@ -1,16 +1,33 @@
-import br.com.matheuspg.screenMatch.model.Movie;
+import br.com.matheuspg.screenMatch.model.Filme;
+import br.com.matheuspg.screenMatch.model.Serie;
 
 public class Main {
     public static void main(String[] args) {
-        Movie favoriteMovie = new Movie();
-        favoriteMovie.setName("Shrek");
-        favoriteMovie.setReleaseYear(2012);
-        favoriteMovie.setIcludedPlan(true);
-        favoriteMovie.setDuration(130);
-        favoriteMovie.setSinopse("""
-                Filme de desenho de um ogro que pega uma princesa e transforma
-                ela em um ogro tambem (descrição bizarra).
-                """);
-        favoriteMovie.showMovieInfo();
+        Filme meuFilme = new Filme();
+        meuFilme.setNome("O poderoso chefão");
+        meuFilme.setAnoDeLancamento(1970);
+        meuFilme.setDuracaoEmMinutos(180);
+        System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
+
+        meuFilme.exibeFichaTecnica();
+        meuFilme.avalia(8);
+        meuFilme.avalia(5);
+        meuFilme.avalia(10);
+        System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
+        System.out.println(meuFilme.pegaMedia());
+        //meuFilme.somaDasAvaliacoes = 10;
+        //meuFilme.totalDeAvaliacoes = 1;
+        //System.out.println(meuFilme.pegaMedia());
+        System.out.println();
+
+        Serie lost = new Serie();
+        lost.setNome("Lost");
+        lost.setAnoDeLancamento(2000);
+        lost.exibeFichaTecnica();
+        lost.setTemporadas(10);
+        lost.setEpisodiosPorTemporada(10);
+        lost.setMinutosPorEpisodio(50);
+        System.out.println("Duração para maratonar lost: " + lost.getDuracaoEmMinutos());
+
     }
 }
